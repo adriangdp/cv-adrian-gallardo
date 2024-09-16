@@ -2,8 +2,8 @@
 const isHome = Astro.url.pathname === "/";
 ---
 
-<header class="mx-12 mt-16 flex justify-center overflow-hidden">
-  <div class="flex w-4/12">
+<header class="mx-12 mt-16 flex justify-between md:justify-center overflow-hidden">
+  <div class="flex w-5/6 xl:w-4/12">
     <h1 class="min-w-fit">
       <a
         href="/#brief"
@@ -18,15 +18,15 @@ const isHome = Astro.url.pathname === "/";
         Adrián Gallardo de Paz
       </a>        
     </h1>
-    <div class="px-6 w-full">
-      {
-        isHome ? <span class="line line-1"></span>
-        :
-        <span class="line-filled"></span>
-      }
-    </div>
+      <div class="w-full px-6">
+        {
+          isHome ? <span class="line line-1 "></span>
+          :
+          <span class="line-filled"></span>
+        }
+      </div>
   </div>       
-  <nav class="hidden lg:flex justify-center w-4/12">  
+  <nav class="hidden xl:flex justify-center w-4/12">  
     <ul class="flex gap-8 justify-around navlist">
       <li class={isHome? "nav-item" :""}>
         <a href={isHome ? "#" : "/"} class="font-headerFont">Inicio</a>
@@ -38,8 +38,8 @@ const isHome = Astro.url.pathname === "/";
     </ul>
     
   </nav>
-  <div class="flex w-4/12">
-    <div class="w-full px-6">
+  <div class="flex w-1/6 xl:w-4/12">
+    <div class="hidden xl:block xl:w-full px-6">
       {
         isHome ? <span class="line line-2 "></span>
         :
@@ -48,12 +48,12 @@ const isHome = Astro.url.pathname === "/";
     </div>
 
     <p
-      class="inline-block lg:hidden lg:mx-6 text-xl min-w-fit text-right font-headerFont tracking-widest"
+      class="inline-block xl:hidden xl:mx-6 text-xl min-w-fit text-right font-headerFont tracking-widest header-year-2"
     >2024</p>
   <p class={isHome ? 
-    "hidden lg:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest header-year"
+    "hidden xl:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest header-year"
     :
-    "hidden lg:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest"
+    "hidden xl:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest"
     }>
       2024
   </p>
@@ -127,7 +127,12 @@ const isHome = Astro.url.pathname === "/";
 
     .header-year {
       transform: translateY(3rem);
-      animation: down-to-up 0.5s ease-out 5.4s 1 forwards;
+      animation: down-to-up 0.5s ease-out 5.2s 1 forwards;
+    }
+
+    .header-year-2 {
+      transform: translateY(3rem);
+      animation: down-to-up 0.5s ease-out 3.2s 1 forwards;
     }
   </style>
 </header>

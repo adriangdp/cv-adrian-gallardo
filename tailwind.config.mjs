@@ -21,6 +21,12 @@ export default {
 							"12rem"							
 						],
 			},
+			gridTemplateRows: {
+				'1-md': 'repeat(1, minmax(0,33em))',
+				'2-md': 'repeat(2, minmax(0,33em))',
+				'1-xl': 'repeat(1, minmax(0,36em))',
+				'2-xl': 'repeat(2, minmax(0,36em))',
+			},
 		},
 	},
 	plugins: [],

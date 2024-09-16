@@ -1,28 +1,37 @@
 ---
 import Card from "../components/Card.astro";
 ---
-<div class="w-full justify-center bg-amber-400">
-  <div class="mx-auto pt-10 w-3/4 flex flex-wrap justify-start">
-    <Card
+<div class="w-full justify-center bg-amber-400" >
+  <div class="mx-auto py-10 w-3/4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-4 md:grid-rows-2-md xl:grid-rows-2-xl gap-3 md:gap-4 xl:gap-6">
+    <Card 
       title="Portfolio"
       href="/"
       gitrep="https://github.com/adriangdp/cv"
       body="Cat ipsum dolor sit amet, egyptian mau. Donskoy bombay scottish fold bobcat donskoy himalayan, yet russian blue. Turkish angora. Cougar norwegian forest donskoy."
       techArray={["html", "css",  "js", "astro","tailwind"]}
+      aos="flip-left"
+      aosOffset="0"
+      class="col-start-1"
     />
-    <Card
+    <Card 
       title="Desvelando Oriente"
       href="https://desvelandooriente.netlify.app/"
       gitrep="https://github.com/adriangdp/desvelando-oriente"
       body="Cat ipsum dolor sit amet, egyptian mau. Donskoy bombay scottish fold bobcat donskoy himalayan, yet russian blue. Turkish angora. Cougar norwegian forest donskoy."
       techArray={["html", "css", "react", "bootstrap","sass","wordpress"]}
+      aos="flip-left"
+      aosOffset="0"
+      class="col-start-2"
     />
-    <Card
+    <Card 
       title="Amelia Earhart"
       href="https://ameliaearhart.netlify.app/"
       gitrep="https://github.com/adriangdp/amelia-earhart"
       body="Cat ipsum dolor sit amet, eius deserunt for totam. Quia cillum for excepteur. Aute. Anim adipisci occaecat or quis"
       techArray={["html", "css", "sass", "js"]}
+      aos="flip-left"
+      aosOffset="0"
+      class="col-start-3"
     />
     <Card
       title="Arcosa"
@@ -30,8 +39,18 @@ import Card from "../components/Card.astro";
       gitrep="https://github.com/adriangdp/arcosa"
       body="Deserunt. Consequatur doloremque, for omnis dolore ex enim ut. Eius error or id incidunt. Quaerat ab but elit, culpa tempora aut."
       techArray={["html", "css", "js"]}
+      aos="flip-left"
+      aosOffset="0"
     />
 
 
   </div>
 </div>
+
+
+'- Añadidos props al component Card para usar con atributos de AOS.
+- Modificado el layout ProjectsShelf para un mejor control de los tamaños responsive de las tarjetas.
+- Extendido tailwindConfig con unos tamaños de fila personalizados.
+- Cambiadas algunas animaciones del componente Brief.
+- Cambiadas animaciones del menú de navegación.
+- Más ajustes al menú de navegación.'
