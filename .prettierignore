@@ -1,0 +1,8 @@
+.astro/
+.vscode/
+node_modules/
+package-lock.json
+package.json
+tailwind.config.mjs
+tsconfig.json
+**/*.mjs

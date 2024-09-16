@@ -1,0 +1,20 @@
+---
+import "../styles/global.css";
+import Navigation from "../components/NavigationAnimated.astro";
+
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA:Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body class="w-screen bg-sky-950">
+    <Navigation />
+    <slot />
+  </body>
+</html>

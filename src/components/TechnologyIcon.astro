@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+const { tech } = Astro.props;
+let icon = {
+  src: "",
+  alt: "",
+};
+function pickIcon(tech) {
+  switch (tech) {
+    case "react": {
+      (icon.src = "https://img.icons8.com/color/48/react-native.png"),
+        (icon.alt = "react-native");
+      break;
+    }
+    case "html": {
+      (icon.src = "https://img.icons8.com/color/48/html-5--v1.png"),
+        (icon.alt = "html-5");
+      break;
+    }
+    case "css": {
+      (icon.src = "https://img.icons8.com/color/48/css3.png"),
+        (icon.alt = "css");
+      break;
+    }
+    case "js": {
+      (icon.src = "https://img.icons8.com/fluency/48/javascript.png"),
+        (icon.alt = "javascript");
+      break;
+    }
+    case "bootstrap" : {
+      (icon.src = "https://img.icons8.com/color/48/bootstrap--v2.png"),
+      (icon.alt="bootstrap");
+      break;
+    }
+    case "tailwind" : {
+      (icon.src = "https://img.icons8.com/color/48/tailwind_css.png"),
+      (icon.alt="tailwind css");
+      break;
+    }
+    case "sass" : {
+      (icon.src = "https://img.icons8.com/color/48/sass-avatar.png"),
+      (icon.alt="sass");
+      break;
+    }
+    case "wordpress" : {
+      (icon.src = "https://img.icons8.com/color/48/wordpress.png"),
+      (icon.alt="wordpress");
+      break;
+    }
+    case "astro" : {
+      (icon.src = "https://img.icons8.com/nolan/64/astro-js.png"),
+      (icon.alt="astro");
+      break;
+    }
+  }
+}
+
+pickIcon(tech);
+---
+
+<div class="m-2 p-1 rounded-full w-12 round-circle-white">
+  <img src={icon.src} alt={icon.alt} />
+</div>
+
+<style>
+  .round-circle-white {
+    box-shadow: 0rem 0rem 0rem 2rem rgb(102, 102, 102) inset;
+  }
+</style>

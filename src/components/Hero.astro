@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+---
+
+<div
+  class="w-full px-16 pt-32 h-screen flex flex-col md:justify-start overflow-hidden"
+  id="hero-container"
+>
+  <div class="overflow-hidden">
+    <p
+      class="font-headerFont text-5xl md:text-8xl lg:text-10xl xl:text-14xl font-extrabold text-start uppercase hero-title hero-title-1"
+    >
+      Front end
+    </p>
+  </div>
+
+  <div class="mb-0 mt-12 overflow-hidden">
+    <p
+      class="font-headerFont text-5xl md:text-8xl lg:text-10xl 2xl:text-14xl font-extrabold text-end uppercase hero-title hero-title-2"
+    >
+      Developer
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-out");
+        return;
+      }
+      entry.target.classList.remove("fade-out");
+    });
+  });
+</script>
+
+<style>
+  .hero-title {
+    transform: translateY(5em);
+    opacity: 1;
+    transition: opacity linear 2s;
+  }
+
+  .hero-title-1 {
+    animation: down-to-up-filled-large 1.35s ease 0s 1 forwards;
+  }
+  .hero-title-2 {
+    animation: down-to-up-filled-large 1.35s ease 0.7s 1 forwards;
+  }
+
+  .hero-title.fade-out {
+    opacity: 0;
+  }
+</style>

@@ -1,0 +1,133 @@
+---
+const isHome = Astro.url.pathname === "/";
+---
+
+<header class="mx-12 mt-16 flex justify-center overflow-hidden">
+  <div class="flex w-4/12">
+    <h1 class="min-w-fit">
+      <a
+        href="/#brief"
+        class={
+          isHome ? 
+          "text-xs md:text-xl lg:text-base font-headerFont w-full nombre"
+          :
+          "text-xs md:text-xl lg:text-base font-headerFont w-full"
+        }
+        
+      >
+        Adrián Gallardo de Paz
+      </a>        
+    </h1>
+    <div class="px-6 w-full">
+      {
+        isHome ? <span class="line line-1"></span>
+        :
+        <span class="line-filled"></span>
+      }
+    </div>
+  </div>       
+  <nav class="hidden lg:flex justify-center w-4/12">  
+    <ul class="flex gap-8 justify-around navlist">
+      <li class={isHome? "nav-item" :""}>
+        <a href={isHome ? "#" : "/"} class="font-headerFont">Inicio</a>
+      </li>
+      <li class={isHome? "nav-item" :""}><a class="font-headerFont" href="/experiencia">Experiencia</a></li>
+      <li class={isHome? "nav-item" :""}><a class="font-headerFont">Tecnologías</a></li>
+      <li class={isHome? "nav-item" :""}><a class="font-headerFont">Proyectos</a></li>
+      <li class={isHome? "nav-item" :""}><a class="font-headerFont">Académico</a></li>
+    </ul>
+    
+  </nav>
+  <div class="flex w-4/12">
+    <div class="w-full px-6">
+      {
+        isHome ? <span class="line line-2 "></span>
+        :
+        <span class="line-filled"></span>
+      }
+    </div>
+
+    <p
+      class="inline-block lg:hidden lg:mx-6 text-xl min-w-fit text-right font-headerFont tracking-widest"
+    >2024</p>
+  <p class={isHome ? 
+    "hidden lg:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest header-year"
+    :
+    "hidden lg:inline-block text-xs md:text-xl lg:text-base min-w-fit text-right font-headerFont tracking-widest"
+    }>
+      2024
+  </p>
+  
+    
+  </div>
+
+  <style>
+    .nombre {
+      transform: translateX(-3rem);
+      opacity: 0;
+      animation: left-to-right 0.7s ease-out 2s 1 forwards;
+    }
+
+    .line-1:before,
+    .line-2:after {
+      content: " ";
+      display: inline-block;
+      vertical-align: middle;
+      height: 1px;
+      background-color: var(--base-white);
+      position: relative;
+    }
+    .line:before {
+      animation: fillLine 0.7s ease-out 2.6s 1 forwards;
+    }
+    .line:after {
+      animation: fillLine 0.7s ease-out 4.8s 1 forwards;
+    }
+
+    @keyframes fillLine {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    .line-filled{
+      content: " ";
+      display: inline-block;
+      vertical-align: middle;
+      height: 1px;
+      background-color: var(--base-white);
+      position: relative;
+      width:100%
+    }
+
+    .nav-item {
+      transform: translateY(3rem);
+    }
+
+    .nav-item:nth-child(1) {
+      animation: down-to-up 0.5s ease-out 3.2s 1 forwards;
+    }
+    .nav-item:nth-child(2) {
+      animation: down-to-up 0.5s ease-out 3.5s 1 forwards;
+    }
+    .nav-item:nth-child(3) {
+      animation: down-to-up 0.5s ease-out 3.8s 1 forwards;
+    }
+
+    .nav-item:nth-child(4) {
+      animation: down-to-up 0.5s ease-out 4.1s 1 forwards;
+    }
+
+    .nav-item:nth-child(5) {
+      animation: down-to-up 0.5s ease-out 4.4s 1 forwards;
+    }
+
+    .header-year {
+      transform: translateY(3rem);
+      animation: down-to-up 0.5s ease-out 5.4s 1 forwards;
+    }
+  </style>
+</header>

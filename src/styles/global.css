@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Fauna+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root {
+  --base-white: rgba(212, 212, 212, 0.925);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", "Times New Roman", Times, serif;
+}
+
+p,
+li,
+a {
+  font-family: "Fauna One", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+div {
+  color: var(--base-white);
+}
+
+@keyframes down-to-up {
+  0% {
+    transform: translateY(3em);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0em);
+    opacity: 1;
+  }
+}
+
+@keyframes down-to-up-filled-large {
+  0% {
+    transform: translateY(5em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-3em);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(0em);
+    opacity: 1;
+  }
+}
